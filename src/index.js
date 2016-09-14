@@ -88,9 +88,23 @@ var MaskedInput = React.createClass({
     setSelection(this.input, this.mask.selection)
   },
 
+  _mergeValues(value) {
+    var valueIndex = 0
+    return this.mask.getValue().split('').reduce(function(result, letter) {
+      // console.log(JSON.stringify(result), JSON.stringify(letter), JSON.stringify(value[valueIndex]), JSON.stringify(value));
+      if (letter === '_') {
+        return result + value[valueIndex++]
+      }
+      else if (value[valueIndex] === letter) {
+        valueIndex++
+      }
+      return result + letter
+    }, '')
+  },
+
   _onChange(e) {
     // console.log('onChange', JSON.stringify(getSelection(this.input)), e.target.value)
-
+    this.mask.setValue(this._mergeValues(e.target.value))
     var maskValue = this.mask.getValue()
     if (e.target.value !== maskValue) {
       // Cut or delete operations will have shortened the value

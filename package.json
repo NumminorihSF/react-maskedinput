@@ -1,13 +1,13 @@
 {
-  "name": "react-maskedinput",
+  "name": "react-maskedinput-sf",
   "description": "Masked <input/> React component",
-  "version": "3.3.0-beta.1",
+  "version": "3.3.1",
   "main": "./lib/index.js",
   "jsnext:main": "es6/index.js",
   "standalone": "MaskedInput",
-  "homepage": "https://github.com/insin/react-maskedinput",
+  "homepage": "https://github.com/numminorihsf/react-maskedinput",
   "license": "MIT",
-  "author": "Jonny Buchanan <jonathan.buchanan@gmail.com>",
+  "author": "Konstantine Petryaev <numminorihsf@gmail.com>",
   "keywords": [
     "react",
     "masked",
@@ -42,6 +42,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/insin/react-maskedinput.git"
+    "url": "http://github.com/numminorihsf/react-maskedinput.git"
   }
 }
