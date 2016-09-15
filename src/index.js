@@ -1,7 +1,7 @@
 var React = require('react')
 var {getSelection, setSelection} = require('react/lib/ReactInputSelection')
 
-var InputMask = require('inputmask-core')
+var InputMask = require('inputmask-core-with-delete')
 
 var KEYCODE_Z = 90
 var KEYCODE_Y = 89
@@ -104,7 +104,8 @@ var MaskedInput = React.createClass({
 
   _onChange(e) {
     // console.log('onChange', JSON.stringify(getSelection(this.input)), e.target.value)
-    this.mask.setValue(this._mergeValues(e.target.value))
+    e.target.value = this._mergeValues(e.target.value)
+    this.mask.setValue(e.target.value)
     var maskValue = this.mask.getValue()
     if (e.target.value !== maskValue) {
       // Cut or delete operations will have shortened the value
